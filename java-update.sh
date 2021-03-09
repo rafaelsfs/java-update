@@ -90,7 +90,15 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
             echo -e '\033[1;32m '
             java -version
 
-
+            # java environment variables
+            if [ -e /etc/bash.bashrc] then
+                echo '#Java Eviroment'
+                echo 'JAVA_HOME=/opt/java' >> /etc/bash.bashrc
+                echo 'JDK_HOME=$JAVA_HOME' >> /etc/bash.bashrc
+                echo 'PATH=$PATH:$JAVA_HOME/bin' >> /etc/bash.bashrc
+                export JAVA_HOME
+                export PATH
+            fi    
         fi
 else
 
