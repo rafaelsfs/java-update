@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # change directory to user's / home
 cd /home/$USER
