@@ -91,13 +91,14 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
             java -version
 
             # java environment variables
-            if [ -e /etc/bash.bashrc] then
-                echo '#Java Eviroment'
-                echo 'JAVA_HOME=/opt/java' >> /etc/bash.bashrc
-                echo 'JDK_HOME=$JAVA_HOME' >> /etc/bash.bashrc
-                echo 'PATH=$PATH:$JAVA_HOME/bin' >> /etc/bash.bashrc
-                export JAVA_HOME
-                export PATH
+            if [ -e /etc/bash.bashrc ] then
+                sudo echo '#Java Eviroment' >> /etc/bash.bashrc
+                sudo echo 'JAVA_HOME=/opt/java' >> /etc/bash.bashrc
+                sudo echo 'JDK_HOME=$JAVA_HOME' >> /etc/bash.bashrc
+                sudo echo 'PATH=$PATH:$JAVA_HOME/bin' >> /etc/bash.bashrc
+                sudo echo 'export JAVA_HOME' >> /etc/bash.bashrc
+                sudo echo 'export PATH' >> /etc/bash.bashrc
+                source /etc/bash.bash
                 echo $JAVA_HOME
                 echo $JDK_HOME
                 echo $PATH
