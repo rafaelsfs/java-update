@@ -13,8 +13,8 @@ AVAILABLE=`curl -s https://jdk.java.net/$MAJOR/ |grep -E '*_linux-x64_bin.tar.gz
 INSTALLED=`cat /opt/java/release |grep -E 'JAVA_VERSION=' |awk -F"\"" '{print $2}'`
 
 #Mostra as versoes instalada e disponivel no site
-echo -e '\033[1;34m Versão Instalada : '$INSTALLED
-echo -e '\033[1;36m Versão Disponível: '$AVAILABLE
+echo -e '\033[1;34m Installed version: '$INSTALLED
+echo -e '\033[1;36m Latest version...: '$AVAILABLE
 echo ' '
 
 #Save download link
