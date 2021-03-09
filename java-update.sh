@@ -42,7 +42,7 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
             DIR=`ls -lt |awk -F" " '/jdk/ {print $9}' |head -n1`     
 
             #create symbolic link of the new version for java directory /opt/java
-            ln -s $DIR java 
+            sudo ln -s $DIR java 
 
             #Configures Ubuntu update-alteranatives to use the new version
             sudo update-alternatives --install "/usr/bin/java" "java" "/opt/java/bin/java" 1
@@ -69,7 +69,7 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
             DIR=`ls -lt |awk -F" " '/jdk/ {print $9}' |head -n1`     
 
             #create symbolic link of the new version for java directory /opt/java
-            ln -s $DIR java 
+            sudo ln -s $DIR java 
 
             #Configures Ubuntu update-alteranatives to use the new version
             sudo update-alternatives --install "/usr/bin/java" "java" "/opt/java/bin/java" 1
