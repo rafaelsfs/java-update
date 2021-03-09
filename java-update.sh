@@ -82,6 +82,6 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
         fi        
 else
 
-    #mensagem 
+    #shows that you have the latest version installed
     echo -e '\033[1;32m You have the latest version of Java'    
 fi
