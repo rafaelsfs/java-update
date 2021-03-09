@@ -58,6 +58,25 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
             #displays java version
             java -version
 
+            # java environment variables
+            if [ -e "$HOME/.bashrc" ]; then
+                cd $HOME
+                cp .bashrc .bashrc.bak
+                echo '#Java Eviroment' >> "$HOME/.bashrc"
+                echo 'JAVA_HOME=/opt/java' >> "$HOME/.bashrc"
+                echo 'JDK_HOME=$JAVA_HOME' >> "$HOME/.bashrc"
+                echo 'PATH=$PATH:$JAVA_HOME/bin' >> "$HOME/.bashrc"
+                echo 'export JAVA_HOME' >> "$HOME/.bashrc"
+                echo 'export PATH' >> "$HOME/.bashrc"
+                cd $HOME
+                source .bashrc
+                export 'JAVA_HOME=/opt/java'
+                export 'JDK_HOME='$JAVA_HOME
+                export 'PATH=$PATH:$JAVA_HOME/bin'
+                echo 'JAVA_HOME '$JAVA_HOME
+                echo 'JDK_HOME  '$JDK_HOME
+            fi                
+
         else    
             #download the file
             wget $LINK
