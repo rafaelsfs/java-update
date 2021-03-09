@@ -98,8 +98,9 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
                 echo 'PATH=$PATH:$JAVA_HOME/bin' >> "$HOME/.bashrc"
                 echo 'export JAVA_HOME' >> "$HOME/.bashrc"
                 echo 'export PATH' >> "$HOME/.bashrc"
-                echo '\n /home/$USER/.bashrc \n'
-                source /home/$USER/.bashrc
+                cd $HOME
+                sleep 3
+                source .bashrc
                 echo 'JAVA_HOME '$JAVA_HOME
                 echo 'JDK_HOME  '$JDK_HOME
             fi    
