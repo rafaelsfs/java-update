@@ -43,9 +43,6 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
             #create symbolic link of the new version for java directory /opt/java
             sudo ln -s $DIR java 
 
-            #list new java directory
-            ls java
-
             #Configures Ubuntu update-alteranatives to use the new version
             sudo update-alternatives --install /usr/bin/java java /opt/java/bin/java 1
 
@@ -76,9 +73,6 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
 
             #create symbolic link of the new version for java directory /opt/java
             sudo ln -s $DIR java 
-
-            #list new java directory
-            ls java
 
             #Configures Ubuntu update-alteranatives to use the new version
             sudo update-alternatives --install /usr/bin/java java /opt/java/bin/java 1
