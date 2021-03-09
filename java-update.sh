@@ -98,6 +98,9 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
                 echo 'PATH=$PATH:$JAVA_HOME/bin' >> /etc/bash.bashrc
                 export JAVA_HOME
                 export PATH
+                echo $JAVA_HOME
+                echo $JDK_HOME
+                echo $PATH
             fi    
         fi
 else
