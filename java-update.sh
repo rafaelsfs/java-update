@@ -92,6 +92,8 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
 
             # java environment variables
             if [ -e "$HOME/.bashrc" ]; then
+                cd $HOME
+                cp .bashrc .bashrc.bak
                 echo '#Java Eviroment' >> "$HOME/.bashrc"
                 echo 'JAVA_HOME=/opt/java' >> "$HOME/.bashrc"
                 echo 'JDK_HOME=$JAVA_HOME' >> "$HOME/.bashrc"
@@ -101,7 +103,7 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
                 cd $HOME
                 source .bashrc
                 export 'JAVA_HOME=/opt/java'
-                export 'JDK_HOME=$JAVA_HOME'
+                export 'JDK_HOME='$JAVA_HOME
                 export 'PATH=$PATH:$JAVA_HOME/bin'
                 echo 'JAVA_HOME '$JAVA_HOME
                 echo 'JDK_HOME  '$JDK_HOME

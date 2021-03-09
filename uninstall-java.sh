@@ -8,5 +8,5 @@ sudo rm -Rf jdk*
 cd $HOME
 rm openjdk*
 rm -Rf java-update
-rm .bashrc
 mv .bashrc.bak .bashrc
+source .bashrc
