@@ -91,7 +91,7 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
             java -version
 
             # java environment variables
-            if [ -e "$HOME/.bashrc" ] then
+            if [ -f "$HOME/.bashrc" ] then
                 echo '#Java Eviroment' >> "$HOME/.bashrc"
                 echo 'JAVA_HOME=/opt/java' >> "$HOME/.bashrc"
                 echo 'JDK_HOME=$JAVA_HOME' >> "$HOME/.bashrc"
@@ -102,6 +102,8 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
                 echo $JAVA_HOME
                 echo $JDK_HOME
                 echo $PATH  
+            else
+                echo 'teste'
             fi    
         fi
 else
