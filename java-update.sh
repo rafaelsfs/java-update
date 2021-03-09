@@ -27,7 +27,7 @@ ARQ=`curl -s https://jdk.java.net/$MAJOR/ |grep -E '*_linux-x64_bin.tar.gz">' |a
 if [ "$AVAILABLE" != "$INSTALLED" ]; then
 
     #shows message that they are different and that will update
-    echo -e '\033[1;31m The installed version is out of date downloading the new version'
+    echo -e '\033[1;31m The installed version is out of date downloading the new version \033[0m '
 
         #Checks download file already exists
         if [ -e "$ARQ" ]; then        
