@@ -91,14 +91,14 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
             java -version
 
             # java environment variables
-            if [ -e "~/bashrc" ] then
-                echo '#Java Eviroment' >> "~/bashrc"
-                echo 'JAVA_HOME=/opt/java' >> "~/bashrc"
-                echo 'JDK_HOME=$JAVA_HOME' >> "~/bashrc"
-                echo 'PATH=$PATH:$JAVA_HOME/bin' >> "~/bashrc"
-                echo 'export JAVA_HOME' >> "~/bashrc"
-                echo 'export PATH' >> "~/bashrc"
-                source ~/bashrc
+            if [ -e "$HOME/.bashrc" ] then
+                echo '#Java Eviroment' >> "$HOME/.bashrc"
+                echo 'JAVA_HOME=/opt/java' >> "$HOME/.bashrc"
+                echo 'JDK_HOME=$JAVA_HOME' >> "$HOME/.bashrc"
+                echo 'PATH=$PATH:$JAVA_HOME/bin' >> "$HOME/.bashrc"
+                echo 'export JAVA_HOME' >> "$HOME/.bashrc"
+                echo 'export PATH' >> "$HOME/.bashrc"
+                source $HOME/.bashrc
                 echo $JAVA_HOME
                 echo $JDK_HOME
                 echo $PATH  
