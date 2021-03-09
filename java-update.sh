@@ -27,7 +27,6 @@ ARQ=`curl -s https://jdk.java.net/$MAJOR/ |grep -E '*_linux-x64_bin.tar.gz">' |a
 if [ "$AVAILABLE" != "$INSTALLED" ]; then
 
     #shows message that they are different and that will update
-    #echo -e '\033[1;31m A versão instalada esta desatualizada baixndo a nova versão'
     echo -e '\033[1;31m The installed version is out of date downloading the new version'
 
         #Checks download file already exists
@@ -52,6 +51,9 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
             #Checks whether update-alternatives is configured
             sudo update-alternatives --display java
             sudo update-alternatives --display javac
+
+            #displays java version
+            java -version
 
         else    
             #download the file
@@ -79,7 +81,7 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
 
             #displays java version
             java -version
-        fi        
+        fi
 else
 
     #shows that you have the latest version installed
