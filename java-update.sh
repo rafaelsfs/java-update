@@ -48,13 +48,13 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
             ls java
 
             #Configures Ubuntu update-alteranatives to use the new version
-            sudo update-alternatives --install "/usr/bin/java"  "java"  "/opt/java/bin/java"  1
+            sudo update-alternatives --install /usr/bin/java java /opt/java/bin/java 1
 
             #Checks whether update-alternatives is configured
             sudo update-alternatives --display java
 
             #Configures Ubuntu update-alteranatives to use the new version
-            sudo update-alternatives --install "/usr/bin/javac"  "javac"  "/opt/java/bin/javac"  1
+            sudo update-alternatives --install /usr/bin/javac javac /opt/java/bin/javac 1
 
             #Checks whether update-alternatives is configured
             sudo update-alternatives --display javac
