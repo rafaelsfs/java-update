@@ -122,14 +122,14 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
             sudo update-alternatives --display javac
 
             #displays java version
-            echo -e '\033[1;32m '
+            echo -e '\033[1;32m \033[0m \n'
             java -version
 
             # java environment variables
             if [ -e "$HOME/.bashrc" ]; then
-                echo -e "\033[1;32m  configuring bashrc"
+                echo -e "\n \033[1;32m Configuring bashrc \033[0m \n "
                 cd $HOME
-                cp .bashrc .bashrc.bak
+                cp -v .bashrc .bashrc.bak
                 echo '#Java Eviroment' >> "$HOME/.bashrc"
                 echo 'JAVA_HOME=/opt/java' >> "$HOME/.bashrc"
                 echo 'JDK_HOME=$JAVA_HOME' >> "$HOME/.bashrc"
@@ -144,9 +144,9 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
             fi                
 
             if [ -e "$HOME/.zshrc" ]; then
-                echo -e "\033[1;32m configuring zshrc"
+                echo -e "\n \033[1;32m Configuring zshrc \033[0m \n"
                 cd $HOME
-                cp .zshrc .zshrc.bak
+                cp -v .zshrc .zshrc.bak
                 echo '#Java Eviroment' >> "$HOME/.zshrc"
                 echo 'JAVA_HOME=/opt/java' >> "$HOME/.zshrc"
                 echo 'JDK_HOME=$JAVA_HOME' >> "$HOME/.zshrc"
