@@ -24,6 +24,9 @@ rm -Rf java-update
 #restore bashrc file
 mv .bashrc.bak .bashrc
 
+#restore bashrc file
+mv .zshrc.bak .zshrc
+
 #load bashrc original config
 source .bashrc
 echo -e '\033[1;32m Uninstall complete'
