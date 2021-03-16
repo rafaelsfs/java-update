@@ -10,3 +10,10 @@ chmod + x java-update.sh
 
 ./java-update.sh
 
+## Uninstall
+
+cd /java-update
+
+chmod + x java-update.sh
+
+./uninstall-java.sh

@@ -60,6 +60,7 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
 
             # java environment variables
             if [ -e "$HOME/.bashrc" ]; then
+                echo -e "\033[1;32m  configuring bashrc"
                 cd $HOME
                 cp .bashrc .bashrc.bak
                 echo '#Java Eviroment' >> "$HOME/.bashrc"
@@ -68,8 +69,6 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
                 echo 'PATH=$PATH:$JAVA_HOME/bin' >> "$HOME/.bashrc"
                 echo 'export JAVA_HOME' >> "$HOME/.bashrc"
                 echo 'export PATH' >> "$HOME/.bashrc"
-                cd $HOME
-                source .bashrc
                 export 'JAVA_HOME=/opt/java'
                 export 'JDK_HOME='$JAVA_HOME
                 export 'PATH=$PATH:$JAVA_HOME/bin'
@@ -77,8 +76,8 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
                 echo 'JDK_HOME  '$JDK_HOME
             fi                
 
-
             if [ -e "$HOME/.zshrc" ]; then
+                echo -e "\033[1;32m configuring zshrc"
                 cd $HOME
                 cp .zshrc .zshrc.bak
                 echo '#Java Eviroment' >> "$HOME/.zshrc"
@@ -87,13 +86,11 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
                 echo 'PATH=$PATH:$JAVA_HOME/bin' >> "$HOME/.zshrc"
                 echo 'export JAVA_HOME' >> "$HOME/.zshrc"
                 echo 'export PATH' >> "$HOME/.zshrc"
-                cd $HOME
-                source .zshrc
                 export 'JAVA_HOME=/opt/java'
                 export 'JDK_HOME='$JAVA_HOME
                 export 'PATH=$PATH:$JAVA_HOME/bin'
                 echo 'JAVA_HOME '$JAVA_HOME
-                echo 'JDK_HOME  '$JDK_HOME
+                echo 'JDK_HOME  '$JDK_HOME                
             fi  
 
         else    
@@ -130,6 +127,7 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
 
             # java environment variables
             if [ -e "$HOME/.bashrc" ]; then
+                echo -e "\033[1;32m  configuring bashrc"
                 cd $HOME
                 cp .bashrc .bashrc.bak
                 echo '#Java Eviroment' >> "$HOME/.bashrc"
@@ -138,16 +136,15 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
                 echo 'PATH=$PATH:$JAVA_HOME/bin' >> "$HOME/.bashrc"
                 echo 'export JAVA_HOME' >> "$HOME/.bashrc"
                 echo 'export PATH' >> "$HOME/.bashrc"
-                cd $HOME
-                source .bashrc
                 export 'JAVA_HOME=/opt/java'
                 export 'JDK_HOME='$JAVA_HOME
                 export 'PATH=$PATH:$JAVA_HOME/bin'
                 echo 'JAVA_HOME '$JAVA_HOME
                 echo 'JDK_HOME  '$JDK_HOME
-            fi    
+            fi                
 
             if [ -e "$HOME/.zshrc" ]; then
+                echo -e "\033[1;32m configuring zshrc"
                 cd $HOME
                 cp .zshrc .zshrc.bak
                 echo '#Java Eviroment' >> "$HOME/.zshrc"
@@ -156,13 +153,12 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
                 echo 'PATH=$PATH:$JAVA_HOME/bin' >> "$HOME/.zshrc"
                 echo 'export JAVA_HOME' >> "$HOME/.zshrc"
                 echo 'export PATH' >> "$HOME/.zshrc"
-                cd $HOME
-                source .zshrc
                 export 'JAVA_HOME=/opt/java'
                 export 'JDK_HOME='$JAVA_HOME
                 export 'PATH=$PATH:$JAVA_HOME/bin'
                 echo 'JAVA_HOME '$JAVA_HOME
-                echo 'JDK_HOME  '$JDK_HOME
+                echo 'JDK_HOME  '$JDK_HOME                
+            fi                
             fi  
         fi
 else
