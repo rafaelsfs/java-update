@@ -10,7 +10,14 @@ MAJOR=`curl -s https://jdk.java.net/ |grep Ready |awk -F"/" '{print $2}'`
 AVAILABLE=`curl -s https://jdk.java.net/$MAJOR/ |grep -E '*_linux-x64_bin.tar.gz">' |awk -F"/" '{print $6}' |awk -F"k" '{print $2}'`
 
 #Check the INSTALLED version of openjdk
-INSTALLED=`cat /opt/java/release |grep -E 'JAVA_VERSION=' |awk -F"\"" '{print $2}'`
+if [ -e "/opt/java/release" ]; then
+
+    INSTALLED=`cat /opt/java/release |grep -E 'JAVA_VERSION=' |awk -F"\"" '{print $2}'`
+
+else
+    INSTALLED="Not instaled"
+
+fi
 
 #Mostra as versoes instalada e disponivel no site
 echo -e '\n\033[1;34m Installed version: '$INSTALLED
