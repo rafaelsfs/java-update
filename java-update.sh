@@ -20,7 +20,7 @@ else
 
 fi
 
-#Mostra as versoes instalada e disponivel no site
+#Shows the versions installed and available on the website
 echo -e '\n\033[1;34m Installed version: '$INSTALLED
 echo -e '\033[1;36m Latest version...: '$AVAILABLE '\n'
 
