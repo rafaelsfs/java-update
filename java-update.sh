@@ -98,16 +98,16 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
         echo -e " "
 
         #Checks whether update-alternatives is configured
-        sudo update-alternatives --display java
-        echo -e " "
+        #sudo update-alternatives --display java
+        #echo -e " "
 
         #Configures Ubuntu update-alteranatives to use the new version
         sudo update-alternatives --install /usr/bin/javac javac /opt/java/bin/javac 1
         echo -e " "
 
         #Checks whether update-alternatives is configured
-        sudo update-alternatives --display javac
-        echo -e " "
+        #sudo update-alternatives --display javac
+        #echo -e " "
 
         # java environment variables
         export 'JAVA_HOME=/opt/java'
@@ -120,6 +120,8 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
     #displays java version
     echo -e '\033[1;32m'
     java -version
+
+    echo -e '\nJava successfully installed\n'
 
 else
 
