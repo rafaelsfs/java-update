@@ -28,5 +28,4 @@ mv .bashrc.bak .bashrc
 mv .zshrc.bak .zshrc
 
 #load bashrc original config
-source .bashrc
 echo -e '\033[1;32m Uninstall complete'

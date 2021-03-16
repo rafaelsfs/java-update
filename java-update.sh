@@ -11,13 +11,9 @@ AVAILABLE=`curl -s https://jdk.java.net/$MAJOR/ |grep -E '*_linux-x64_bin.tar.gz
 
 #Check the INSTALLED version of openjdk
 if [ -e "/opt/java/release" ]; then
-
     INSTALLED=`cat /opt/java/release |grep -E 'JAVA_VERSION=' |awk -F"\"" '{print $2}'`
-
 else
-
     INSTALLED="Not installed"
-
 fi
 
 #Shows the versions installed and available on the website
@@ -38,7 +34,7 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
 
     #Checks download file already exists
     if [ -e "$ARQ" ]; then   
-        echo -e "/n $ARQ alredy exist \n"
+        echo -e "$ARQ alredy exist \n"
     else
         #download the file
         wget $LINK              
@@ -53,6 +49,9 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
     #saves the directory of the new version
     DIR=`ls -lt |awk -F" " '/jdk/ {print $9}' |head -n1`     
        
+    #remove symbolic link of the new version for java directory /opt/java
+    sudo rm java
+
     #create symbolic link of the new version for java directory /opt/java
     sudo ln -s $DIR java 
         
