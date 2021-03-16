@@ -15,6 +15,7 @@ if [ -e "/opt/java/release" ]; then
     INSTALLED=`cat /opt/java/release |grep -E 'JAVA_VERSION=' |awk -F"\"" '{print $2}'`
 
 else
+
     INSTALLED="Not instaled"
 
 fi
@@ -58,59 +59,68 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
     #go to home dir
     cd $HOME
             
-    # java environment variables
-    if [ -e "$HOME/.bashrc" ]; then
-        echo -e "\n \033[1;32m Configuring bashrc \033[0m"
-        cp -v .bashrc .bashrc.bak
-        echo " " >> "$HOME/.bashrc"
-        echo '#Java Eviroment' >> "$HOME/.bashrc"
-        echo 'JAVA_HOME=/opt/java' >> "$HOME/.bashrc"
-        echo 'JDK_HOME=$JAVA_HOME' >> "$HOME/.bashrc"
-        echo 'PATH=$PATH:$JAVA_HOME/bin' >> "$HOME/.bashrc"
-        echo 'export JAVA_HOME' >> "$HOME/.bashrc"
-        echo 'export PATH' >> "$HOME/.bashrc"
-        echo " "
-    fi                
+    if [ "$INSTALLED" != "Not instaled" ]; then  
 
-    if [ -e "$HOME/.zshrc" ]; then
-        echo -e "\n \033[1;32m Configuring zshrc \033[0m"
-        cd $HOME
-        cp -v .zshrc .zshrc.bak
-        echo " " >> "$HOME/.zshrc"
-        echo '#Java Eviroment' >> "$HOME/.zshrc"
-        echo 'JAVA_HOME=/opt/java' >> "$HOME/.zshrc"
-        echo 'JDK_HOME=$JAVA_HOME' >> "$HOME/.zshrc"
-        echo 'PATH=$PATH:$JAVA_HOME/bin' >> "$HOME/.zshrc"
-        echo 'export JAVA_HOME' >> "$HOME/.zshrc"
-        echo 'export PATH' >> "$HOME/.zshrc"  
-        echo " "
-    fi  
+        # java environment variables
+        if [ -e "$HOME/.bashrc" ]; then
 
-    #Configures Ubuntu update-alteranatives to use the new version
-    sudo update-alternatives --install /usr/bin/java java /opt/java/bin/java 1
-    echo -e " "
+            echo -e "\n \033[1;32m Configuring bashrc \033[0m"
+            cp -v .bashrc .bashrc.bak
+            echo " " >> "$HOME/.bashrc"
+            echo '#Java Eviroment' >> "$HOME/.bashrc"
+            echo 'JAVA_HOME=/opt/java' >> "$HOME/.bashrc"
+            echo 'JDK_HOME=$JAVA_HOME' >> "$HOME/.bashrc"
+            echo 'PATH=$PATH:$JAVA_HOME/bin' >> "$HOME/.bashrc"
+            echo 'export JAVA_HOME' >> "$HOME/.bashrc"
+            echo 'export PATH' >> "$HOME/.bashrc"
+            echo " "
 
-    #Checks whether update-alternatives is configured
-    sudo update-alternatives --display java
-    echo -e " "
+        fi                
 
-    #Configures Ubuntu update-alteranatives to use the new version
-    sudo update-alternatives --install /usr/bin/javac javac /opt/java/bin/javac 1
-    echo -e " "
+        if [ -e "$HOME/.zshrc" ]; then
 
-    #Checks whether update-alternatives is configured
-    sudo update-alternatives --display javac
-    echo -e " "
+            echo -e "\n \033[1;32m Configuring zshrc \033[0m"
+            cd $HOME
+            cp -v .zshrc .zshrc.bak
+            echo " " >> "$HOME/.zshrc"
+            echo '#Java Eviroment' >> "$HOME/.zshrc"
+            echo 'JAVA_HOME=/opt/java' >> "$HOME/.zshrc"
+            echo 'JDK_HOME=$JAVA_HOME' >> "$HOME/.zshrc"
+            echo 'PATH=$PATH:$JAVA_HOME/bin' >> "$HOME/.zshrc"
+            echo 'export JAVA_HOME' >> "$HOME/.zshrc"
+            echo 'export PATH' >> "$HOME/.zshrc"  
+            echo " "
+            
+        fi  
 
-    # java environment variables
-    export 'JAVA_HOME=/opt/java'
-    export 'JDK_HOME='$JAVA_HOME
-    echo -e '\nJAVA_HOME '$JAVA_HOME
-    echo -e 'JDK_HOME  '$JDK_HOME    
+        #Configures Ubuntu update-alteranatives to use the new version
+        sudo update-alternatives --install /usr/bin/java java /opt/java/bin/java 1
+        echo -e " "
+
+        #Checks whether update-alternatives is configured
+        sudo update-alternatives --display java
+        echo -e " "
+
+        #Configures Ubuntu update-alteranatives to use the new version
+        sudo update-alternatives --install /usr/bin/javac javac /opt/java/bin/javac 1
+        echo -e " "
+
+        #Checks whether update-alternatives is configured
+        sudo update-alternatives --display javac
+        echo -e " "
+
+        # java environment variables
+        export 'JAVA_HOME=/opt/java'
+        export 'JDK_HOME='$JAVA_HOME
+        echo -e '\nJAVA_HOME '$JAVA_HOME
+        echo -e 'JDK_HOME  '$JDK_HOME
+
+    fi        
             
     #displays java version
     echo -e '\033[1;32m'
     java -version
+
 else
 
     #shows that you have the latest version installed
