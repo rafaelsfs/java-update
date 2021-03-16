@@ -77,6 +77,25 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
                 echo 'JDK_HOME  '$JDK_HOME
             fi                
 
+
+            if [ -e "$HOME/.zshrc" ]; then
+                cd $HOME
+                cp .zshrc .zshrc.bak
+                echo '#Java Eviroment' >> "$HOME/.zshrc"
+                echo 'JAVA_HOME=/opt/java' >> "$HOME/.zshrc"
+                echo 'JDK_HOME=$JAVA_HOME' >> "$HOME/.zshrc"
+                echo 'PATH=$PATH:$JAVA_HOME/bin' >> "$HOME/.zshrc"
+                echo 'export JAVA_HOME' >> "$HOME/.zshrc"
+                echo 'export PATH' >> "$HOME/.zshrc"
+                cd $HOME
+                source .zshrc
+                export 'JAVA_HOME=/opt/java'
+                export 'JDK_HOME='$JAVA_HOME
+                export 'PATH=$PATH:$JAVA_HOME/bin'
+                echo 'JAVA_HOME '$JAVA_HOME
+                echo 'JDK_HOME  '$JDK_HOME
+            fi  
+
         else    
             #download the file
             wget $LINK
@@ -127,6 +146,24 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
                 echo 'JAVA_HOME '$JAVA_HOME
                 echo 'JDK_HOME  '$JDK_HOME
             fi    
+
+            if [ -e "$HOME/.zshrc" ]; then
+                cd $HOME
+                cp .zshrc .zshrc.bak
+                echo '#Java Eviroment' >> "$HOME/.zshrc"
+                echo 'JAVA_HOME=/opt/java' >> "$HOME/.zshrc"
+                echo 'JDK_HOME=$JAVA_HOME' >> "$HOME/.zshrc"
+                echo 'PATH=$PATH:$JAVA_HOME/bin' >> "$HOME/.zshrc"
+                echo 'export JAVA_HOME' >> "$HOME/.zshrc"
+                echo 'export PATH' >> "$HOME/.zshrc"
+                cd $HOME
+                source .zshrc
+                export 'JAVA_HOME=/opt/java'
+                export 'JDK_HOME='$JAVA_HOME
+                export 'PATH=$PATH:$JAVA_HOME/bin'
+                echo 'JAVA_HOME '$JAVA_HOME
+                echo 'JDK_HOME  '$JDK_HOME
+            fi  
         fi
 else
 
