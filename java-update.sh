@@ -16,7 +16,7 @@ if [ -e "/opt/java/release" ]; then
 
 else
 
-    INSTALLED="Not instaled"
+    INSTALLED="Not installed"
 
 fi
 
@@ -59,7 +59,7 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
     #go to home dir
     cd $HOME
             
-    if [ "$INSTALLED" != "Not instaled" ]; then  
+    if [ "$INSTALLED" = "Not installed" ]; then  
 
         # java environment variables
         if [ -e "$HOME/.bashrc" ]; then
@@ -90,7 +90,7 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
             echo 'export JAVA_HOME' >> "$HOME/.zshrc"
             echo 'export PATH' >> "$HOME/.zshrc"  
             echo " "
-            
+
         fi  
 
         #Configures Ubuntu update-alteranatives to use the new version
