@@ -60,7 +60,7 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
 
             # java environment variables
             if [ -e "$HOME/.bashrc" ]; then
-                echo -e "\033[1;32m  configuring bashrc"
+                echo -e "\n \033[1;32m Configuring bashrc \033[0m \n "
                 cd $HOME
                 cp .bashrc .bashrc.bak
                 echo '#Java Eviroment' >> "$HOME/.bashrc"
@@ -77,7 +77,7 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
             fi                
 
             if [ -e "$HOME/.zshrc" ]; then
-                echo -e "\033[1;32m configuring zshrc"
+                echo -e "\n \033[1;32m Configuring zshrc  \033[0m \n "
                 cd $HOME
                 cp .zshrc .zshrc.bak
                 echo '#Java Eviroment' >> "$HOME/.zshrc"
@@ -159,7 +159,6 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
                 echo 'JAVA_HOME '$JAVA_HOME
                 echo 'JDK_HOME  '$JDK_HOME                
             fi                
-            fi  
         fi
 else
 
