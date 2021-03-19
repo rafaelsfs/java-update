@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# change directory to user's / home
+#Change directory to user's / home
 cd /home/$USER
 
 #Checks the main version of openjdk
@@ -29,7 +29,7 @@ ARQ=`curl -s https://jdk.java.net/$MAJOR/ |grep -E '*_linux-x64_bin.tar.gz">' |a
 #Checks difference between installed and available versions
 if [ "$AVAILABLE" != "$INSTALLED" ]; then
 
-    #shows message that they are different and that will update
+    #Shows message that they are different and that will update
     echo -e '\033[1;31m The installed version is out of date downloading the new version \033[0m \n'
 
     #Checks download file already exists
@@ -40,27 +40,27 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
         wget $LINK              
     fi
     
-    #unpacks file in /opt
+    #Unpacks file in /opt
     sudo tar xf $ARQ -C /opt
         
-    #changes to directory /opt
+    #Changes to directory /opt
     cd /opt
         
-    #saves the directory of the new version
+    #Saves the directory of the new version
     DIR=`ls -lt |awk -F" " '/jdk/ {print $9}' |head -n1`     
        
-    #remove symbolic link of the new version for java directory /opt/java
+    #Remove symbolic link of the new version for java directory /opt/java
     sudo rm java
 
-    #create symbolic link of the new version for java directory /opt/java
+    #Create symbolic link of the new version for java directory /opt/java
     sudo ln -s $DIR java 
         
-    #go to home dir
+    #Go to home dir
     cd $HOME
             
     if [ "$INSTALLED" = "Not installed" ]; then  
 
-        # java environment variables
+        # Java environment variables
         if [ -e "$HOME/.bashrc" ]; then
 
             echo -e "\n \033[1;32m Configuring bashrc \033[0m"
@@ -108,7 +108,7 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
         #sudo update-alternatives --display javac
         #echo -e " "
 
-        # java environment variables
+        # Java environment variables
         export 'JAVA_HOME=/opt/java'
         export 'JDK_HOME='$JAVA_HOME
         echo -e '\nJAVA_HOME '$JAVA_HOME
@@ -116,7 +116,7 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
 
     fi        
             
-    #displays java version
+    #Displays java version
     echo -e '\033[1;32m'
     java -version
 
@@ -124,6 +124,6 @@ if [ "$AVAILABLE" != "$INSTALLED" ]; then
 
 else
 
-    #shows that you have the latest version installed
+    #Shows that you have the latest version installed
     echo -e '\033[1;32m You have the latest version of Java'    
 fi
