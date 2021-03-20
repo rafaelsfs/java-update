@@ -1,5 +1,5 @@
 #!/bin/bash
-#testing
+
 #Change directory to user's / home
 cd /home/$USER
 
