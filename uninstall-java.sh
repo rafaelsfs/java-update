@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e '\033[1;31m Unstaling...'
+echo -e '\033[1;31m Unstaling...\n'
 
 #Remove Ubuntu update-alteranatives
 sudo update-alternatives --remove java /opt/java/bin/java
