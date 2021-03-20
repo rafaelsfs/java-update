@@ -1,3 +1,4 @@
+![tux](https://github.com/rafaelsfs/public_html/blob/master/Tux.png)
 # Script to install or update Java manually Ubuntu
 
 ## Install
