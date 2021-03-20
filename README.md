@@ -2,6 +2,7 @@
 
 ## Install
 
+``` bash
 git clone https://github.com/rafaelsfs/java-update.git
 
 cd /java-update
@@ -9,11 +10,13 @@ cd /java-update
 chmod + x java-update.sh
 
 ./java-update.sh
+```
 
 ## Uninstall
-
+``` bash
 cd /java-update
 
 chmod + x java-update.sh
 
 ./uninstall-java.sh
+```
