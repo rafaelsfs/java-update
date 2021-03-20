@@ -1,6 +1,6 @@
 ![tux](https://github.com/rafaelsfs/public_html/blob/master/Tux.png)
 # Script to install or update Java manually Ubuntu
-![GitHub](https://img.shields.io/github/license/rafaelsfs/java-update)
+![GitHub](https://img.shields.io/github/license/rafaelsfs/java-update) ![Linux](https://img.shields.io/badge/System-Linux-brightgreen)
 ## Install
 
 ``` bash
