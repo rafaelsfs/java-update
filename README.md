@@ -30,7 +30,7 @@ chmod + x uninstall-java.sh
 ```
 ##
 
-#Install Zulu Builds of OpenJDK for JAVA LTS
+# Install Zulu Builds of OpenJDK for JAVA LTS
 
 ## Install [![java](https://img.shields.io/badge/-Java-blue)](https://www.azul.com/downloads/zulu-community/?package=jdk)
 ``` bash
